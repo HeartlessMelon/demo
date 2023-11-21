@@ -53,7 +53,7 @@
 					<image>
 						<builder>paketobuildpacks/builder-jammy-base:latest</builder>
 					</image>
-					<mainClass>java.com.uno.app.MessagingStompWebsocketApplication</mainClass>
+					<!-- <mainClass>java.com.uno.app.MessagingStompWebsocketApplication</mainClass> -->
 				</configuration>
 			</plugin>
 		</plugins>

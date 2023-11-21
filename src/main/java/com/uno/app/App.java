@@ -64,70 +64,70 @@ class App {
         }
 
         
-        public static void main(String[] args){
-            System.out.println("Welcome to Jank UNO");
+        // public static void main(String[] args){
+        //     System.out.println("Welcome to Jank UNO");
             
-            // Scanner playerInput = new Scanner(System.in);
-            // System.out.println("Type 'Start' to start the game");
-            // String line = playerInput.nextLine();
-            // while(!line.equals("Start")){
-            //     System.out.println("Try Again");
-            //     line = playerInput.nextLine();   
-            // }
+        //     // Scanner playerInput = new Scanner(System.in);
+        //     // System.out.println("Type 'Start' to start the game");
+        //     // String line = playerInput.nextLine();
+        //     // while(!line.equals("Start")){
+        //     //     System.out.println("Try Again");
+        //     //     line = playerInput.nextLine();   
+        //     // }
    
             
-            Game g = new Game();
-            g.startGame();
-            addPlayerToGamesToGame(g);
-            g.distributeCardsAtStart();
-            for (Player p : g.getTurnOrder()){
-                System.out.println(p);
-            } 
+        //     Game g = new Game();
+        //     g.startGame();
+        //     addPlayerToGamesToGame(g);
+        //     g.distributeCardsAtStart();
+        //     for (Player p : g.getTurnOrder()){
+        //         System.out.println(p);
+        //     } 
 
-            while(g.isGameRunning()){
-                String userInput;
-                g.validHand();
-                g.drawUntilValid();
-                System.out.println("Discard Pile : " + g.getTopDiscard());
-                currPlayer = g.getTurnOrder().peek();
-                System.out.println(currPlayer);
-                System.out.println("Input the index of the card you desire to play");
-                playerInput = new Scanner(System.in);
-                userInput = playerInput.nextLine();// Index of Hand
+        //     while(g.isGameRunning()){
+        //         String userInput;
+        //         g.validHand();
+        //         g.drawUntilValid();
+        //         System.out.println("Discard Pile : " + g.getTopDiscard());
+        //         currPlayer = g.getTurnOrder().peek();
+        //         System.out.println(currPlayer);
+        //         System.out.println("Input the index of the card you desire to play");
+        //         playerInput = new Scanner(System.in);
+        //         userInput = playerInput.nextLine();// Index of Hand
 
-                String[] splittedInput = splitPlayerInput(userInput);
+        //         String[] splittedInput = splitPlayerInput(userInput);
                 
-                while(!g.playCard(currPlayer, convertInputToInteger(splittedInput[0]), chooseColor(splittedInput[1]))){
-                    System.out.println("Invalid Card, try again");
-                    userInput = playerInput.nextLine();
-                    splittedInput = splitPlayerInput(userInput);
-                }
-                if(g.winGame()){// Check for win condition
-                    break;
-                }
-                System.out.println("Enter 'End Turn' to finish the turn");
-                userInput = playerInput.nextLine();// "End Turn"
-                while(!userInput.equals("End Turn")){
-                    System.out.println("Enter 'End Turn' to finish the turn");
-                    userInput = playerInput.nextLine(); 
-                }
-                g.endTurn();
-                /**
-                 * display player hand and top Card of discard pile
-                 * take an input (number - index of a Card in the hand) (end turn - ends the turn )
-                 * RL - we might have to print out the index number before the card for readability 
-                 */
-            }
-            System.out.println(g.getTurnOrder().peek() + "has won");
+        //         while(!g.playCard(currPlayer, convertInputToInteger(splittedInput[0]), chooseColor(splittedInput[1]))){
+        //             System.out.println("Invalid Card, try again");
+        //             userInput = playerInput.nextLine();
+        //             splittedInput = splitPlayerInput(userInput);
+        //         }
+        //         if(g.winGame()){// Check for win condition
+        //             break;
+        //         }
+        //         System.out.println("Enter 'End Turn' to finish the turn");
+        //         userInput = playerInput.nextLine();// "End Turn"
+        //         while(!userInput.equals("End Turn")){
+        //             System.out.println("Enter 'End Turn' to finish the turn");
+        //             userInput = playerInput.nextLine(); 
+        //         }
+        //         g.endTurn();
+        //         /**
+        //          * display player hand and top Card of discard pile
+        //          * take an input (number - index of a Card in the hand) (end turn - ends the turn )
+        //          * RL - we might have to print out the index number before the card for readability 
+        //          */
+        //     }
+        //     System.out.println(g.getTurnOrder().peek() + "has won");
 
-            playerInput.close();
+        //     playerInput.close();
             
 
 
 
 
       
-        }
+        // }
 }
 
 
